@@ -1,0 +1,7 @@
+version: '2'
+services:
+  CHANGE_ME_service_name:
+    image: mhristof/ansible-1.9.4
+    # command: 
+    # volumes:
+      #- ./:/root/
