@@ -9,3 +9,7 @@
 """
 %HERE%
 """
+
+import logging
+
+LOGGER = logging.getLogger('%FILE%')
