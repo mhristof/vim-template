@@ -1,6 +1,11 @@
 #
 #
 
+SHELL := bash
+.SHELLFLAGS := -eu -o pipefail -c
+.ONESHELL:
+
+
 all:
 	%HERE%@echo "%FFILE% needs your attention"
 
