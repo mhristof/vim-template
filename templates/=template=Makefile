@@ -1,14 +1,10 @@
 #
+# vim:ft=make
 #
 
 SHELL := bash
 .SHELLFLAGS := -eu -o pipefail -c
 .ONESHELL:
 
-
-all:
-	%HERE%@echo "%FFILE% needs your attention"
-
-
-# vim:ft=make
-#
+help:           ## Show this help.
+    @grep '.*:.*##' Makefile | grep -v grep  | sort | sed 's/:.* ## /:/g' | column -t -s:
