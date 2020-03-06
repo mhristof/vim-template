@@ -7,4 +7,4 @@ SHELL := bash
 .ONESHELL:
 
 help:           ## Show this help.
-    @grep '.*:.*##' Makefile | grep -v grep  | sort | sed 's/:.* ## /:/g' | column -t -s:
+	@grep '.*:.*##' Makefile | grep -v grep  | sort | sed 's/:.* ## /:/g' | column -t -s:
