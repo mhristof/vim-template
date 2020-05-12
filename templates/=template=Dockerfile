@@ -1,5 +1,8 @@
-FROM ubuntu:16.04
-MAINTAINER Mike Christof <mhristof@gmail.com>
+FROM ubuntu:18.04
+
+ENV XDG_CACHE_HOME /tmp/.cache
+ENV PYTEST_ADDOPTS="-o cache_dir=/tmp"
+ENV PYLINTHOME=/tmp
 
 RUN apt-get update -y && \
   apt-get install -y %HERE% && \
