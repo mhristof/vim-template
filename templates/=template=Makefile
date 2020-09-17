@@ -1,10 +1,11 @@
-#
-# vim:ft=make
-#
-
+MAKEFLAGS += --warn-undefined-variables
 SHELL := bash
 .SHELLFLAGS := -eu -o pipefail -c
+.DEFAULT_GOAL := help
 .ONESHELL:
 
+%HERE%
+
+.PHONY:
 help:           ## Show this help.
 	@grep '.*:.*##' Makefile | grep -v grep  | sort | sed 's/:.* ##/:/g' | column -t -s:
