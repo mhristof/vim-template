@@ -5,6 +5,7 @@ ENV XDG_CACHE_HOME /tmp/.cache
 ENV PYTEST_ADDOPTS="-o cache_dir=/tmp"
 ENV PYLINTHOME=/tmp
 
-RUN apt-get update -y && \
-  apt-get install -y %HERE% && \
+RUN apt-get update && \
+  apt-get install --yes --no-install-recommends \
+    %HERE% && \
   rm -rf /var/lib/apt/lists/*

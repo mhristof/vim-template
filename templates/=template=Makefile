@@ -1,11 +1,13 @@
 MAKEFLAGS += --warn-undefined-variables
-SHELL := bash
+SHELL := /bin/bash
+ifeq ($(word 1,$(subst ., ,$(MAKE_VERSION))),4)
 .SHELLFLAGS := -eu -o pipefail -c
+endif
 .DEFAULT_GOAL := help
 .ONESHELL:
 
 %HERE%
 
-.PHONY:
-help:           ## Show this help.
+.PHONY: help
+help: ## Show this help.
 	@grep '.*:.*##' Makefile | grep -v grep  | sort | sed 's/:.* ##/:/g' | column -t -s:
